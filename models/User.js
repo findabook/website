@@ -3,10 +3,11 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
 	{
-		username: String,
+		username: { type: String, unique: true },
 		password: String,
 		location: String,
-		preferences: Array
+		preferences: [{ type: String, enum: ["thriller", "novel", "terror", "police", "children", "romantic", "adventures", "politics", "comedy"]}],
+		chats: [{ type: Schema.Types.ObjectId, ref: "Chat" }]
 	},
 	{
 		timestamps: {

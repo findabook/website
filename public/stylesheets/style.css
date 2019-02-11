@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html {
   min-height: 100%;
   position: relative; }
@@ -76,5 +77,13 @@ footer {
 
 footer p {
   padding: 10px; }
+=======
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+>>>>>>> b489c9c9c750bac3bfef52dec0fc57b664f97961
 
 /*# sourceMappingURL=style.css.map */
