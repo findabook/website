@@ -82,3 +82,17 @@ footer {
 footer p {
   padding: 10px;
 }
+
+/* SIDEBAR */
+
+#sidebar {
+    width:300px;
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
+    margin-left: -300px;
+}
+
+#sidebar.active {
+  margin-left: 0px;
+}

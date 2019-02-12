@@ -16,17 +16,20 @@
 <body>
   <header>
 
-    <i class="fas fa-bars logoMenu"></i>
+    <button type="button" id="sidebarCollapse" class="logoMenu">
+      <i class="fas fa-bars"></i>
+    </button>
     <input class="elementMenu" type="search" id="search" placeholder="Find a book" />
     <img class="logoLibro" src="/images/libro.png" alt="logo empresa">
     <img class="logoLibro" src="/images/menu fader.png" alt="Filters">
 
 
-
-    {{!-- <a href="/">Home</a>
-    <a href="/auth/login">Login</a>
-    <a href="/auth/signup">Signup</a>
-    <a href="/auth/logout">Logout</a> --}}
+    <nav id="sidebar">
+      <a href="/">Home</a>
+      <a href="/auth/login">Login</a>
+      <a href="/auth/signup">Signup</a>
+      <a href="/auth/logout">Logout</a>
+    </nav>
 
   </header>
 
