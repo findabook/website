@@ -1,45 +1,38 @@
-<div class="container backgroundBlue">
+<div class="container-fluid backgroundBlue">
 
-  <div class="row">
-    <div class="col xs-2"></div>
-    <div class="col xs-8">
-      <button class="buttonWhite">
-        Regístrate con Facebook
-      </button>
-    </div>
-    <div class="col xs-2"></div>
+  <div class="centered">
+    <button class="buttonWhite">
+      Regístrate con Facebook
+    </button>
+
   </div>
 
   <hr>
 
   <form action="/auth/signup" method="POST" id="form-container">
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input id="username" type="text" name="username" placeholder="Username">
+    <div class="row justify-content-center">
+      <input class="field" id="username" type="text" name="username" placeholder="Username">
     </div>
 
-    <div class="form-group">
-      <label for="direction">Direction</label>
-      <input id="direction" type="text" name="direction" placeholder="Your direction">
+    <div class="row justify-content-center">
+      <input class="field" id="direction" type="text" name="direction" placeholder="Your direction">
     </div>
 
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input id="email" type="text" name="email" placeholder="Your email">
+    <div class="row justify-content-center">
+      <input class="field" id="email" type="text" name="email" placeholder="Your email">
     </div>
 
-    <div class="form-group">
-      <label for="phone">Phone</label>
-      <input id="phone" type="text" name="phone" placeholder="Your phone">
+    <div class="row justify-content-center">
+      <input class="field" id="phone" type="text" name="phone" placeholder="Your phone">
     </div>
 
-
-    <div class="form-group">
-      <label for="password">Password: </label>
-      <input id="password" type="password" name="password" placeholder="Your password">
+    <div class="row justify-content-center">
+      <input class="field" id="password" type="password" name="password" placeholder="Your password">
     </div>
 
-    <div class="row">
+    <p class="genreFav">Your favorite genres:</p>
+
+    <div class="row justify-content-center">
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Thriller">
         <label class="form-check-label" for="preferences">Thriller</label>
@@ -53,7 +46,7 @@
         <label class="form-check-label" for="preferences">Terror</label>
       </div>
     </div>
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Policiaco">
         <label class="form-check-label" for="preferences">Policiaco</label>
@@ -67,7 +60,7 @@
         <label class="form-check-label" for="preferences">Romantico</label>
       </div>
     </div>
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="Aventuras">
         <label class="form-check-label" for="preferences">Aventuras</label>
@@ -86,15 +79,13 @@
     <div class="error-message">{{ message }}</div>
     {{/if}}
 
-    <div class="row">
-      <div class="col xs-2"></div>
-      <div class="col xs-8">
-        <button class="buttonWhite">
-          Create account
-        </button>
-      </div>
-      <div class="col xs-2"></div>
+    <div class="centered">
+      <button class="buttonWhite">
+        Create account
+      </button>
     </div>
+
+
     <br>
 
     <p class="account-message">

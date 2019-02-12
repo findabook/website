@@ -6,46 +6,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
 <body>
   <header>
 
-    <i class="fas fa-bars logoMenu"></i>
+    <button type="button" id="sidebarCollapse" class="logoMenu">
+      <i class="fas fa-bars"></i>
+    </button>
     <input class="elementMenu" type="search" id="search" placeholder="Find a book" />
     <img class="logoLibro" src="/images/libro.png" alt="logo empresa">
     <img class="logoLibro" src="/images/menu fader.png" alt="Filters">
 
-
-
-    {{!-- <a href="/">Home</a>
-    <a href="/auth/login">Login</a>
-    <a href="/auth/signup">Signup</a>
-    <a href="/auth/logout">Logout</a> --}}
+    {{#is user "no-user"}}
+    <nav id="sidebar" class="nav flex-column">
+      <a class="linkMenu" href="/">Home</a>
+      <a class="linkMenu" href="/auth/login">Login</a>
+      <a class="linkMenu" href="/auth/signup">Signup</a>
+      <a class="linkMenu" href="/auth/trending">Trending topic</a>
+      <a class="linkMenu" href="/auth/help">Help</a>
+    </nav>
+    {{else}}
+    <nav id="sidebar" class="nav flex-column">
+      <a class="linkMenu" href="/">Home</a>
+      <a class="linkMenu" href="/auth/signup">Add book</a>
+      <a class="linkMenu" href="/auth/signup">Search book</a>
+      <a class="linkMenu" href="/auth/signup">Edit perfil</a>
+      <a class="linkMenu" href="/auth/signup">Chat</a>
+      <a class="linkMenu" href="/auth/signup">Help</a>
+      <a class="linkMenu" href="/auth/logout">Logout</a>
+    </nav>
+    {{/is}}
 
   </header>
-
-
-
 
   {{{body}}}
 
   <footer>
-    <p>@Copyrigth 2019</p>
+    <p>Copyrigth @2019 Find a book</p>
   </footer>
 
 
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
     crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
   <script src="/javascripts/script.js"></script>
 </body>
