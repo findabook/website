@@ -1,24 +1,106 @@
-<h2>Signup</h2>
+<div class="container backgroundBlue">
 
-<form action="/auth/signup" method="POST" id="form-container">
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="JonSnow">
+  <div class="row">
+    <div class="col xs-2"></div>
+    <div class="col xs-8">
+      <button class="buttonWhite">
+        Regístrate con Facebook
+      </button>
+    </div>
+    <div class="col xs-2"></div>
+  </div>
 
-  <br><br>
+  <hr>
 
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-  <br>
-  {{#if message }}
+  <form action="/auth/signup" method="POST" id="form-container">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input id="username" type="text" name="username" placeholder="Username">
+    </div>
+
+    <div class="form-group">
+      <label for="direction">Direction</label>
+      <input id="direction" type="text" name="direction" placeholder="Your direction">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="text" name="email" placeholder="Your email">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input id="phone" type="text" name="phone" placeholder="Your phone">
+    </div>
+
+
+    <div class="form-group">
+      <label for="password">Password: </label>
+      <input id="password" type="password" name="password" placeholder="Your password">
+    </div>
+
+    <div class="row">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Thriller">
+        <label class="form-check-label" for="preferences">Thriller</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Novela">
+        <label class="form-check-label" for="preferences">Novela</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Terror">
+        <label class="form-check-label" for="preferences">Terror</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Policiaco">
+        <label class="form-check-label" for="preferences">Policiaco</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="Infantil">
+        <label class="form-check-label" for="preferences">Infantil</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="Romantico">
+        <label class="form-check-label" for="preferences">Romantico</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="Aventuras">
+        <label class="form-check-label" for="preferences">Aventuras</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="Politico">
+        <label class="form-check-label" for="preferences">Politico</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="Comedia">
+        <label class="form-check-label" for="preferences">Comedia</label>
+      </div>
+    </div>
+    <br>
+    {{#if message }}
     <div class="error-message">{{ message }}</div>
-  {{/if}}
+    {{/if}}
 
-  <br><br>
+    <div class="row">
+      <div class="col xs-2"></div>
+      <div class="col xs-8">
+        <button class="buttonWhite">
+          Create account
+        </button>
+      </div>
+      <div class="col xs-2"></div>
+    </div>
+    <br>
 
-  <button>Create account</button>
+    <p class="account-message">
+      Do you already have an account?
+      <a href="/auth/login">Login</a>
+    </p>
+  </form>
 
-  <p class="account-message">
-    Do you already have an account?
-    <a href="/auth/login">Login</a>
-  </p>
-</form>
+</div>
