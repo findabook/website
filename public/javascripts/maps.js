@@ -12,6 +12,7 @@ function startMap() {
 
 function showMarkers() {
   axios.get(`/map`).then(book => {
+    console.log(book);
     book.data.actualOwners.forEach(user => {
       new google.maps.Marker({
         map: map,

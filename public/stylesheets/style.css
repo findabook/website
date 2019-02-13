@@ -65,9 +65,7 @@ header {
   font-size: 20px;
   color: #e3e3e3; }
 
-.trending {
-  width: 250px; }
-
+/* BODY HOME */
 .squareIndex {
   border: 1px solid #2980b9;
   border-radius: 15px;
@@ -77,19 +75,8 @@ header {
   font-weight: bold;
   background: #e3e3e3; }
 
-.field {
-  border: none;
-  border-bottom: 1px solid #404040;
-  background: #2980b9;
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #e3e3e3; }
-
-.genreFav {
-  font-size: 20px;
-  color: #e3e3e3;
-  margin-top: 20px;
-  text-align: center; }
+.trending {
+  width: 250px; }
 
 .form-container {
   margin-top: 50px; }
@@ -104,6 +91,20 @@ header {
 .col-3 {
   flex-basis: 33%;
   margin: 0; }
+
+.field {
+  border: none;
+  border-bottom: 1px solid #404040;
+  background: #2980b9;
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #e3e3e3; }
+
+.genreFav {
+  font-size: 20px;
+  color: #e3e3e3;
+  margin-top: 20px;
+  text-align: center; }
 
 /*BODY HELP*/
 .help {

@@ -21,6 +21,7 @@ router.get("/used/:name", (req, res, next) => {
 router.get("/map/:id", (req, res, next) => {
   books.find({ _id: req.params.id }).then(book => {
     res.json(book);
+    console.log(book);
   });
 });
 
