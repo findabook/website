@@ -6,7 +6,7 @@ html {
 }
 body {
   padding: 0;
-  margin: 0;
+  margin-top: 80px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -17,7 +17,7 @@ a {
 /* HEADER */
 
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   height: 80px;
@@ -91,8 +91,16 @@ footer p {
     color: #fff;
     transition: all 0.3s;
     margin-left: -300px;
+    z-index: 2;
+    position: absolute;
 }
 
 #sidebar.active {
   margin-left: 0px;
+}
+
+#username {
+  border: none;
+  border-bottom: 1px black solid;
+  font-size: 26px;
 }

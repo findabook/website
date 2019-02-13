@@ -9,6 +9,10 @@ router.get('/new', (req, res, next) => {
     res.render('books/new')
 })
 
+router.get('/add', (req, res, next) => {
+    res.render('books/add')
+})
+
 router.get('/trending', (req, res, next) => {
     res.render('books/trending')
 })
