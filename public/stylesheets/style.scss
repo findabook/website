@@ -6,12 +6,15 @@ html {
 }
 body {
   padding: 0;
-  margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-top: 80px;
+  font: 14px "Montserrat", Helvetica, Arial, sans-serif;
+  // background-image: url("/images/libro.png");
+  // background-repeat: no-repeat;
+  // background-position: bottom;
 }
 
-a {
-  color: #00b7ff;
+::placeholder {
+  color: #e3e3e3;
 }
 
 /* HEADER */
@@ -50,14 +53,13 @@ header {
 
 /* BODY */
 
-.container {
-  position: relative;
-  top: 80px;
+.backgroundBlue {
+  background: #2980b9;
   min-height: 85vmax;
 }
 
-.backgroundBlue {
-  background: #2980b9;
+.centered {
+  text-align: center;
 }
 
 .buttonWhite {
@@ -66,6 +68,58 @@ header {
   margin-top: 30px;
   width: 200px;
   border-radius: 5px;
+}
+
+.buttonBlue {
+  background: #2980b9;
+  padding: 10px;
+  margin-top: 30px;
+  width: 150px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #e3e3e3;
+}
+
+.trending {
+  width: 250px;
+}
+
+.squareIndex {
+  border: 1px solid #2980b9;
+  border-radius: 15px;
+  margin: 70px 10px;
+  padding: 10px 10px 2px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #e3e3e3;
+}
+
+.field {
+  border: none;
+  border-bottom: 1px solid #404040;
+  background: #2980b9;
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #e3e3e3;
+}
+
+.genreFav {
+  font-size: 20px;
+  color: #e3e3e3;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form-container {
+  margin-top: 50px;
+}
+
+.password {
+  margin-top: 30px;
+}
+
+#botonLogin {
+  margin-top: 100px;
 }
 
 /* FOOTER */
@@ -86,13 +140,26 @@ footer p {
 /* SIDEBAR */
 
 #sidebar {
-    width:300px;
-    background: #7386D5;
-    color: #fff;
-    transition: all 0.3s;
-    margin-left: -300px;
+  width: 250px;
+  background: #404040;
+  color: white;
+  transition: all 0.3s;
+  margin-left: -300px;
+  padding: 20px;
+  font-size: 24px;
+}
+
+.linkMenu {
+  padding: 10px;
+  border-bottom: 1px solid black;
+  color: #2980b9;
 }
 
 #sidebar.active {
   margin-left: 0px;
+}
+
+.col-3 {
+  flex-basis: 33%;
+  margin: 0;
 }
