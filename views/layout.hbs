@@ -28,8 +28,8 @@
       <a class="linkMenu" href="/">Home</a>
       <a class="linkMenu" href="/auth/login">Login</a>
       <a class="linkMenu" href="/auth/signup">Signup</a>
-      <a class="linkMenu" href="/auth/trending">Trending topic</a>
-      <a class="linkMenu" href="/auth/help">Help</a>
+      <a class="linkMenu" href="/books/trending">Trending topic</a>
+      <a class="linkMenu" href="/help">Help</a>
     </nav>
     {{else}}
     <nav id="sidebar" class="nav flex-column">
@@ -51,7 +51,8 @@
     <p>Copyrigth @2019 Find a book</p>
   </footer>
 
-
+  <script src="https://maps.googleapis.com/maps/api/js?key={{API_KEY}}"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
