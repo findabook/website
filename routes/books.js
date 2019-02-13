@@ -10,9 +10,20 @@ router.get("/new", (req, res, next) => {
   res.render("books/new");
 });
 
+
+
 router.get("/trending", (req, res, next) => {
   res.render("books/trending");
 });
+
+router.get('/add', (req, res, next) => {
+    res.render('books/add')
+})
+
+router.get('/trending', (req, res, next) => {
+    res.render('books/trending')
+})
+
 
 router.get("/used/:name", (req, res, next) => {
   res.render("books/singleview");
