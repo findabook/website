@@ -61,6 +61,7 @@ hbs.registerHelper("ifUndefined", (value, options) => {
 });
 
 app.locals.title = "Find a Book";
+app.locals.GKEY = process.env.GKEY;
 
 app.use(
   session({

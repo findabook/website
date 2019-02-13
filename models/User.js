@@ -5,13 +5,9 @@ const userSchema = new Schema(
 	{
 		username: { type: String, unique: true },
 		password: String,
-		location: {
-			type: String,
-			coords: {
-				lat: Number,
-				lng: Number
-			}
-		},
+		email: String,
+		address: String,
+		location: Object,
 		preferences: [{ type: String, enum: ["thriller", "novel", "terror", "police", "children", "romantic", "adventures", "politics", "comedy"]}],
 		chats: [{ type: Schema.Types.ObjectId, ref: "Chat" }]
 	},
@@ -25,4 +21,3 @@ const userSchema = new Schema(
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;
-	
