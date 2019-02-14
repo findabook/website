@@ -6,9 +6,9 @@ const chatSchema = new Schema(
     messages: [{
       sender: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
       message: String,
-      timestamps: { createdAt: true, updatedAt: false }
+      creation: {type: Date, default: Date.now}
     }],
-    request: { default: "Pending", enum: ["Pending", "Delivered", "Received"]}
+    request: { type: String, default: "Pending", enum: ["Pending", "Delivered", "Received"]}
   }
 );
 
