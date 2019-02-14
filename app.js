@@ -8,7 +8,7 @@ const hbs = require("hbs");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
-const swag = require("swag")
+const swag = require("swag");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash = require("connect-flash");
@@ -48,7 +48,7 @@ swag.registerHelpers(hbs);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
-app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
+app.use(favicon(path.join(__dirname, "public", "images", "libro.png")));
 
 hbs.registerHelper("ifUndefined", (value, options) => {
   if (arguments.length < 2)
@@ -73,10 +73,10 @@ app.use(
 );
 app.use(flash());
 require("./passport")(app);
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   app.locals.user = req.user;
   if (req.user == undefined) {
-    app.locals.user = "no-user"
+    app.locals.user = "no-user";
   }
   next();
 });

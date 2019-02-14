@@ -1,21 +1,26 @@
 const express = require("express");
 const router = express.Router();
-const books = require("../models/Book")
+const books = require("../models/Book");
 
 router.get("/", (req, res, next) => {
   res.render("index");
 });
 
 router.get("/help", (req, res, next) => {
-  res.render("help")
-})
+  res.render("help");
+});
+
+router.get("/about", (req, res, next) => {
+  res.render("aboutus");
+});
 
 router.get("/becomember", (req, res, next) => {
-  res.render("member")
-})
+  res.render("member");
+});
 
 router.get("/map/:id", (req, res, next) => {
-  books.findById(req.params.id)
+  books
+    .findById(req.params.id)
     .populate("actualOwners")
     .then(book => {
       res.json(book);
