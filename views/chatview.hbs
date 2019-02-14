@@ -1,0 +1,35 @@
+<div id="messages"></div>
+<div id="container-sender">
+<input type="text" name="message" id="text">
+<button id="send">Enviar</button>
+</div>
+<script>
+    let id = "{{chat._id}}"
+    const div = document.querySelector("#messages")
+    document.querySelector("#send").onclick = (e) => {
+            fetch("/chat/message",
+                {
+                    method: "PUT",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ 
+                        message: document.querySelector("#text").value, 
+                        id
+                        })
+                })
+                .then(() => document.querySelector("#text").value = "")
+        }
+        setInterval(() => {
+                fetch(`/chat/message/${id}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        let html = ""
+                        data.messages.forEach(elem => {
+                            html += `<p>${elem.message}</p>`
+                        })
+                        div.innerHTML = html
+                    })
+            }, 5000)
+</script>
