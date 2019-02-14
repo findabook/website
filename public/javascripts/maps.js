@@ -2,10 +2,10 @@ let map;
 
 function startMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 5,
+    zoom: 15,
     center: {
-      lat: 40.222,
-      lng: 3.22
+      lat: 40.4207619,
+      lng: -3.7089807
     }
   });
 }
@@ -16,9 +16,7 @@ function showMarkers() {
       return response.json();
     })
     .then(function (book) {
-      console.log(book)
       book.actualOwners.forEach(user => {
-        console.log(user)
         new google.maps.Marker({
           map: map,
           position: {

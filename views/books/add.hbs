@@ -1,14 +1,10 @@
-<form method="POST" action="/add">
+<form method="POST" action="/books/add">
 <input id="name" name="name" placeholder="Name">
 <div id="suggestion"></div>
 <input id="author" name="author" placeholder="Author">
-<select>
-    <option name="new">new</option>
-    <option name="used">used</option>
-</select>
 <input id="resume" type="hidden" name="resume">
+<input id="categories" type="hidden" name="categories">
 <input id="image" type="hidden" name="image">
-<input type="hidden" name="genre" >
 <button>Share Book</button>
 </form>
 
@@ -17,6 +13,7 @@
         const name = document.querySelector("#name")
         const author = document.querySelector("#author")
         const resume = document.querySelector("#resume")
+        const categories = document.querySelector("#categories")
         const image = document.querySelector("#image")
 name.onkeydown = (e)=> {
     let html = ""
@@ -46,8 +43,8 @@ name.onkeydown = (e)=> {
                 name.value = myJson.volumeInfo.title
                 author.value = myJson.volumeInfo.authors[0]
                 image.value = myJson.volumeInfo.imageLinks.large
-                resume.value = myJson.volumeInfo.description
-                console.log(myJson)
+                resume.value = myJson.volumeInfo.description.replace(/<[^>]*>/g, "")
+                categories.value = [...myJson.volumeInfo.categories]
             })
             suggestion.innerHTML = ""
     })
