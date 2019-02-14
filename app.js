@@ -93,4 +93,7 @@ app.use("/books", booksRoutes);
 const usersRoutes = require("./routes/users");
 app.use("/users", usersRoutes);
 
+const chatsRoutes = require("./routes/users");
+app.use("/chat", chatsRoutes);
+
 module.exports = app;
