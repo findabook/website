@@ -26,14 +26,11 @@ router.get('/trending', (req, res, next) => {
 
 
 router.get("/used/:name", (req, res, next) => {
-  res.render("books/singleview");
-});
-
-router.get("/map/:id", (req, res, next) => {
-  books.find({ _id: req.params.id }).then(book => {
-    res.json(book);
-    console.log(book);
-  });
+  books.findOne({ name: req.params.name })
+    .populate("users")
+    .then(book => {
+      res.render("books/singleview", {book});
+  })
 });
 
 module.exports = router;
