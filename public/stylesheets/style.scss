@@ -154,6 +154,55 @@ header {
   color: #404040;
 }
 
+/*ABOUT*/
+
+.titleAbout {
+  text-align: center;
+  color: #e3e3e3;
+  padding-top: 30px;
+}
+
+.pAbout {
+  padding: 15px 30px;
+  line-height: 1.5em;
+  font-size: 18px;
+  color: #404040;
+  text-align: center;
+}
+
+.imgDescuentos {
+  width: 100%;
+}
+
+.parraf {
+  height: 100px;
+}
+
+.partner {
+  background: white;
+}
+
+.titlePartner {
+  text-align: center;
+  color: #404040;
+  padding-top: 30px;
+}
+
+.imgPartner {
+  margin-left: 50px;
+  padding: 20px;
+}
+
+.imgFnac {
+  margin-left: 60px;
+  padding: 20px;
+}
+
+.imgCasaLibro {
+  margin-left: 50px;
+  padding: 20px;
+}
+
 /* FOOTER */
 
 footer {
@@ -191,7 +240,6 @@ footer p {
   margin-left: 0px;
 }
 
-
 #username {
   border: none;
   border-bottom: 1px black solid;
@@ -202,4 +250,3 @@ footer p {
   flex-basis: 33%;
   margin: 0;
 }
-
