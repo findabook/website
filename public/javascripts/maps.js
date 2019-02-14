@@ -11,19 +11,24 @@ function startMap() {
 }
 
 function showMarkers() {
-  axios.get(`/map`).then(book => {
-    console.log(book);
-    book.data.actualOwners.forEach(user => {
-      new google.maps.Marker({
-        map: map,
-        position: {
-          lat: user.location.coords.lat,
-          lng: user.location.coords.lng
-        },
-        title: user.username
+  fetch(`/map/${id}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (book) {
+      console.log(book)
+      book.actualOwners.forEach(user => {
+        console.log(user)
+        new google.maps.Marker({
+          map: map,
+          position: {
+            lat: user.location.coords.lat,
+            lng: user.location.coords.lng
+          },
+          title: user.username
+        });
       });
-    });
-  });
+    })
 }
 
 startMap();
