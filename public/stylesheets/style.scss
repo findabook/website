@@ -96,6 +96,11 @@ header {
 
 .form-container {
   margin-top: 50px;
+  padding-top: 100px;
+}
+
+.marginForm {
+  margin-top: 100px;
 }
 
 .password {
@@ -104,6 +109,10 @@ header {
 
 #botonLogin {
   margin-top: 100px;
+}
+
+.fb-login-button {
+  margin-left: 60px;
 }
 
 /*BODY SIGNUP*/
@@ -155,6 +164,9 @@ header {
   color: #404040;
 }
 
+.sign {
+  color: black;
+}
 /*ABOUT*/
 
 .titleAbout {
