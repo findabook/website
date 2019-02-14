@@ -80,13 +80,20 @@ header {
   width: 250px; }
 
 .form-container {
-  margin-top: 50px; }
+  margin-top: 50px;
+  padding-top: 100px; }
+
+.marginForm {
+  margin-top: 100px; }
 
 .password {
   margin-top: 30px; }
 
 #botonLogin {
   margin-top: 100px; }
+
+.fb-login-button {
+  margin-left: 60px; }
 
 /*BODY SIGNUP*/
 .col-3 {
@@ -128,6 +135,9 @@ header {
   font-size: 22px;
   margin-bottom: 10px;
   color: #404040; }
+
+.sign {
+  color: black; }
 
 /*ABOUT*/
 .titleAbout {
