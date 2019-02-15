@@ -52,9 +52,8 @@ router.get("/trending", (req, res) => {
 });
 
 router.get("/used/:name", (req, res) => {
-  books
-    .findOne({ name: req.params.name })
-    .populate("users")
+  books.findOne({ name: req.params.name })
+    .populate("actualOwners")
     .then(book => {
       res.render("books/singleview", { book });
     });

@@ -1,11 +1,32 @@
 <div class="fluid-container">
   <h2>{{book.name}}</h2>
   <img src="{{book.imageUrl}}" alt="Front Image of {{book.name}}">
+<div id="chat">
+{{#each book.actualOwners}}
+<button id="{{this._id}}">Start a Chat</button>
+{{/each}}
+</div>
   <p>{{book.resume}}</p>
 </div>
 <div id="map"></div>
 <script>
+  let arrayUserId = ""
   let id = "{{book._id}}"
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key={{GKEY}}"></script>
 <script src="/javascripts/maps.js"></script>
+<script>
+  document.querySelector("#chat").onclick = (e) => {
+    fetch("/chat",
+      {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id: e.target.getAttribute("id") })
+      })
+      .then(res => res.json())
+      .then(json => location.href = `/chat/${json._id}`)
+  }
+</script>
