@@ -35,8 +35,9 @@ router.put("/message", (req, res) => {
 });
 
 router.get("/message/:id", (req, res) => {
+    const user = req.user.id
     chats.findById(req.params.id).then(chat => {
-        res.json(chat);
+        res.json({chat, user});
     });
 });
 module.exports = router

@@ -25,9 +25,14 @@
                 fetch(`/chat/message/${id}`)
                     .then(res => res.json())
                     .then(data => {
+                        console.log(data)
                         let html = ""
-                        data.messages.forEach(elem => {
-                            html += `<p>${elem.message}</p>`
+                        data.chat.messages.forEach(elem => {
+                            if(elem.sender == data.user) {
+                                html += `<p class="myUser">${elem.message}</p>`
+                            } else {
+                                html += `<p>${elem.message}</p>`
+                            }
                         })
                         div.innerHTML = html
                     })
