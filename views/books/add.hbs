@@ -1,38 +1,42 @@
-<form method="POST" action="/books/add">
-<input id="name" name="name" placeholder="Name">
-<div id="suggestion"></div>
-<input id="author" name="author" placeholder="Author">
-<input id="resume" type="hidden" name="resume">
-<input id="categories" type="hidden" name="categories">
-<input id="image" type="hidden" name="image">
-<button>Share Book</button>
-</form>
-
+<div class="container backgroundBlue centered">
+    <h1 class="titleAbout">Add a Book</h1>
+    <form class="formAdd" method="POST" action="/books/add">
+        <input class="field" id="name" name="name" placeholder="Name">
+        <div class="suggestion" id="suggestion"></div>
+        <input class="field author" id="author" name="author" placeholder="Author">
+        <input id="resume" type="hidden" name="resume">
+        <input id="categories" type="hidden" name="categories">
+        <input id="image" type="hidden" name="image">
+        <div>
+            <button class="buttonWhite buttonAdd">Share Book</button>
+        </div>
+    </form>
+</div>
 <script>
-        const suggestion = document.querySelector("#suggestion")
-        const name = document.querySelector("#name")
-        const author = document.querySelector("#author")
-        const resume = document.querySelector("#resume")
-        const categories = document.querySelector("#categories")
-        const image = document.querySelector("#image")
-name.onkeydown = (e)=> {
-    let html = ""
-    if(e.target.value.length > 5) {
-        fetch(`https://www.googleapis.com/books/v1/volumes?q=${e.target.value}`)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                myJson.items.slice(0,4).forEach(elem => {
-                html += `<p id="${elem.id}">${elem.volumeInfo.title}</p>`
-                }) 
-                suggestion.innerHTML = html
-            })
+    const suggestion = document.querySelector("#suggestion")
+    const name = document.querySelector("#name")
+    const author = document.querySelector("#author")
+    const resume = document.querySelector("#resume")
+    const categories = document.querySelector("#categories")
+    const image = document.querySelector("#image")
+    name.onkeydown = (e) => {
+        let html = ""
+        if (e.target.value.length > 5) {
+            fetch(`https://www.googleapis.com/books/v1/volumes?q=${e.target.value}`)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (myJson) {
+                    myJson.items.slice(0, 4).forEach(elem => {
+                        html += `<p id="${elem.id}">${elem.volumeInfo.title}</p>`
+                    })
+                    suggestion.innerHTML = html
+                })
+        }
+        if (e.target.value.length < 4) {
+            suggestion.innerHTML = ""
+        }
     }
-    if (e.target.value.length < 4) {
-        suggestion.innerHTML = ""
-    }
-}
     document.querySelector("#suggestion").onclick = (e => {
         const book = e.target.getAttribute("id")
         fetch(`https://www.googleapis.com/books/v1/volumes/${book}`)
@@ -46,6 +50,6 @@ name.onkeydown = (e)=> {
                 resume.value = myJson.volumeInfo.description.replace(/<[^>]*>/g, "")
                 categories.value = [...myJson.volumeInfo.categories]
             })
-            suggestion.innerHTML = ""
+        suggestion.innerHTML = ""
     })
 </script>
