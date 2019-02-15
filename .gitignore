@@ -1,5 +1,7 @@
 # Dependency directory
 node_modules
+public/stylesheets/style.css
+public/stylesheets/style.css.map
 
 # Debug log from npm
 npm-debug.log
