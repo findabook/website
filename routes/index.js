@@ -23,4 +23,11 @@ router.get("/map/:id", (req, res, next) => {
     });
 });
 
+router.get("/map/popup/:name", (req, res) => {
+  books.findOne({ name: req.params.name })
+    .populate("actualOwners")
+    .then(book => res.json(book));
+})
+
+
 module.exports = router;
